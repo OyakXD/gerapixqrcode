@@ -1,1 +1,3 @@
 libqrencode/
+*.swp
+main
