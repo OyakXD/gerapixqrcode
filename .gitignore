@@ -1,3 +1,5 @@
 libqrencode/
 *.swp
 main
+node_modules/
+*.json
