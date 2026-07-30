@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>gerapixqrcode</title>
+
+<style>
+:root{
+    --bg:#0f172a;
+    --bg2:#1e293b;
+    --text:#e5e7eb;
+    --muted:#94a3b8;
+    --accent:#22c55e;
+    --accent-hover:#16a34a;
+    --border:#334155;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial, sans-serif;
+    background:linear-gradient(135deg,var(--bg),var(--bg2));
+    color:var(--text);
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+}
+
+main{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    padding:60px 20px;
+    text-align:center;
+}
+
+h1{
+    font-size:42px;
+    margin-bottom:14px;
+}
+
+.subtitle{
+    color:var(--muted);
+    max-width:720px;
+    line-height:1.7;
+    margin-bottom:36px;
+}
+
+input{
+    width:100%;
+    max-width:480px;
+    padding:16px;
+    border-radius:12px;
+    border:1px solid var(--border);
+    background:#0b1220;
+    color:var(--text);
+    font-size:16px;
+    margin-bottom:16px;
+}
+
+input:focus{
+    outline:none;
+    border-color:var(--accent);
+}
+
+button{
+    width:100%;
+    max-width:480px;
+    padding:16px;
+    border:none;
+    border-radius:12px;
+    background:var(--accent);
+    color:white;
+    font-size:16px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.2s;
+}
+
+button:hover{
+    background:var(--accent-hover);
+}
+
+.qr-container{
+    margin-top:36px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:280px;
+}
+
+#qr{
+    display:none;
+    max-width:300px;
+    width:100%;
+    background:white;
+    padding:12px;
+    border-radius:12px;
+}
+
+#placeholder{
+    color:#64748b;
+    font-size:15px;
+}
+
+.footer{
+    background:#0b1220;
+    border-top:1px solid #1f2937;
+    padding:24px 20px;
+}
+
+.footer-content{
+    max-width:900px;
+    margin:0 auto;
+    text-align:center;
+}
+
+.footer-aviso{
+    color:#cbd5e1;
+    line-height:1.7;
+    margin-bottom:14px;
+    font-size:14px;
+}
+
+.footer-autoria{
+    color:#94a3b8;
+    font-size:14px;
+}
+
+.footer-autoria a{
+    color:var(--accent);
+    text-decoration:none;
+}
+
+.footer-autoria a:hover{
+    text-decoration:underline;
+}
+</style>
+</head>
+
+<body>
+
+<main>
+
+    <h1>GeraPixQRCode</h1>
+
+    <p class="subtitle">
+        Gere QR Codes PIX estáticos (BR Code) de forma rápida, gratuita e totalmente local.
+    </p>
+
+    <input
+        id="chave"
+        placeholder="Digite sua chave PIX (CPF, telefone, e-mail ou chave aleatória)"
+    >
+
+    <button onclick="gerar()">Gerar QR Code</button>
+
+    <div class="qr-container">
+        <img id="qr" alt="QR Code PIX">
+        <span id="placeholder">O QR Code aparecerá aqui</span>
+    </div>
+
+</main>
+
+<footer class="footer">
+
+    <div class="footer-content">
+
+        <div class="footer-aviso">
+            Este gerador cria <strong>QR Codes PIX estáticos (BR Code)</strong> a partir da chave informada.
+            Certifique-se de que a chave PIX pertence ao destinatário correto antes de compartilhar ou utilizar o QR Code.
+            Para números de celular, utilize o formato internacional <strong>+55DDDNÚMERO</strong>.
+        </div>
+
+        <div class="footer-autoria">
+            Desenvolvido por <strong>Kayo Anderson (OyakLek)</strong> ·
+            <a href="mailto:alveskayo2005@gmail.com">alveskayo2005@gmail.com</a>
+            <br><br>
+            <strong>Projeto Open Source</strong> — contribuições, sugestões e melhorias são bem-vindas.
+	    <a href="https://github.com/OyakXD/gerapixqrcode" target="_blank">O código-fonte está disponível no GitHub.
+        </div>
+    </div>
+
+</footer>
+
+<script src="index.js"></script>
+
+</body>
+</html>
